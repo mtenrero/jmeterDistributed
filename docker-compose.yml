@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  master:
+    image: mtenrero/jmeter
+    tty: true
+    environment:
+      - MODE=master
+      - TEST_NAME=$TEST_NAME
+      - REMOTES=slave
+    expose:
+      - 6666
+    depends_on:
+      - slave
+  slave:
+    image: mtenrero/jmeter
+    tty: true
+    environment:
+      - MODE=node
+    expose:
+      - 7777
+      - 1099
+      - 4445
