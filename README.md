@@ -27,6 +27,7 @@ If you need simulate multiple nodes, clone the slaves in the docker-compose file
 ## Roadmap
 - [x] Basic Image for running distributed tests
 - [x] Docker-compose for local debugging
+- [ ] Docker Swarm Mode with distributed execution
 - [ ] Publish to Docker Hub
 - [ ] CI/CD
 - [ ] Docker-compose v3 improvements
