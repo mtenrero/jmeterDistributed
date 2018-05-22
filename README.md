@@ -40,4 +40,5 @@ TEST_NAME=<TEST_NAME_WITHOUT_JMX_EXTENSION> docker-compose up
 - [x] Publish to Docker Hub
 - [x] CI/CD
 - [x] Docker-compose v3 improvements
+- [x] Docker Swarm Mode with distributed execution
 - [ ] Fix non-ending slaves
