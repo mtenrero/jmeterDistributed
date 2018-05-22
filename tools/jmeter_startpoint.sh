@@ -7,17 +7,18 @@
 MODE=$MODE
 RMI_PORT=$RMI_PORT
 JMX=$JMX
+REMOTES=$REMOTES
 
 _node(){
     cd ../apache-jmeter*
     cd bin
-    ./jmeter-server -Dserver.rmi.localport=7777 -Dserver_port=1099
+    ./jmeter-server -Dserver.rmi.localport=4445 -Dserver_port=1099 
 }
 
 _master(){
     cd ../apache-jmeter*
     cd bin
-    ./jmeter -n -t ../../test/$TEST_NAME.jmx -R$REMOTES
+    ./jmeter -n -t /test/$TEST_NAME.jmx -R$REMOTES -Dserver.rmi.localport=60000
     ./shutdown.sh
 }
 
