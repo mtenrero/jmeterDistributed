@@ -18,7 +18,7 @@ _node(){
 _master(){
     cd ../apache-jmeter*
     cd bin
-    ./jmeter -n -t /test/$TEST_NAME.jmx -R$REMOTES -Dserver.rmi.localport=60000
+    ./jmeter -n -t $TEST_PATH -R$REMOTES -Dserver.rmi.localport=60000
     ./shutdown.sh
 }
 
