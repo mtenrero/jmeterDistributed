@@ -12,7 +12,7 @@ Please, bear in mind that the tags *:latest* and *:3.3* represents the version o
 The image can be started in two modes:
 - **Master** Represents the main instance of Jmeter, and should be started after the nodes. Also a environment variable **_REMOTES_** should be specified in the `docker run` command with the list of all available remotes to use by the master. 
 ```bash
-docker run -it -v $(pwd)/test:/test -e MODE="master" -e TEST_NAME="test.jmx" -e REMOTES="hosts" -p 6666:6666 mtenrero/jmeter
+docker run -it -v $(pwd)/test:/test -e MODE="master" -e TEST_PATH="test.jmx" -e REMOTES="hosts" -p 6666:6666 mtenrero/jmeter
 ```
 - **Node** It's a worker in the distributed load testing process. 
 
@@ -26,7 +26,7 @@ Docker Compose is the easiest way to try the configuration locally. You only nee
 If you need simulate multiple nodes, clone the slaves in the docker-compose file and make sure that they are declared in the REMOTES env.
 
 ```bash
-TEST_NAME=<TEST_NAME_WITHOUT_JMX_EXTENSION> docker-compose up
+TEST_NAME=<JMX_FULL_FILE_PATH> docker-compose up
 ```
 
 ## Ports

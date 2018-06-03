@@ -1,4 +1,4 @@
-# !/bin/bash
+# !/bin/ash
 #### Description: Start up Jmeter in the mode specified
 #### MODES: master / node
 #### Master mode requires a REMOTES env with the list of the remote nodes
@@ -12,13 +12,13 @@ REMOTES=$REMOTES
 _node(){
     cd ../apache-jmeter*
     cd bin
-    ./jmeter-server -Dserver.rmi.localport=4445 -Dserver_port=1099 
+    ./jmeter-server -Dserver.rmi.localport=4445 -Dserver_port=1099 -Z
 }
 
 _master(){
     cd ../apache-jmeter*
     cd bin
-    ./jmeter -n -t $TEST_PATH -R$REMOTES -Dserver.rmi.localport=60000
+    ./jmeter -n -t "$TEST_PATH" -R "$REMOTES"
     ./shutdown.sh
 }
 
