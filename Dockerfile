@@ -11,6 +11,9 @@ RUN wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-3.3.tgz
 RUN tar zxvf apache-jmeter*.tgz
 RUN apk del wget
 
+RUN wget https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.3.1/jmeter.backendlistener.elasticsearch-2.3.1.jar
+RUN cp jmeter.backendlistener.elasticsearch-2.3.1.jar /apache-jmeter-3.3/lib/ext/jmeter.backendlistener.elasticsearch-2.3.1.jar
+
 COPY tools/jmeter_startpoint.sh /script/jmeter_startpoint.sh
 
 RUN rm -f apache-jmeter*.tgz
