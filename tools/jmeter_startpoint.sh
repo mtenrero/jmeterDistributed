@@ -12,7 +12,7 @@ REMOTES=$REMOTES
 _node(){
     cd ../apache-jmeter*
     cd bin
-    ./jmeter-server -Dserver.rmi.localport=4445 -Dserver_port=1099 -Z
+    ./jmeter-server -Dserver.rmi.localport=4445 -Dserver_port=1099
 }
 
 _master(){
